@@ -11,8 +11,9 @@ public class Libros implements Serializable {
     private String etiqueta;
     private int anio;
     private int paginas;
+    private int portadaLibro;
 
-    public Libros(String titulo, String ISNB, String autor, String editorial, String descripcion, String etiqueta, int anio, int paginas) {
+    public Libros(String titulo, String ISNB, String autor, String editorial, String descripcion, String etiqueta, int anio, int paginas, int portada) {
         this.titulo = titulo;
         this.ISNB = ISNB;
         this.autor = autor;
@@ -21,6 +22,8 @@ public class Libros implements Serializable {
         this.etiqueta = etiqueta;
         this.anio = anio;
         this.paginas = paginas;
+        this.portadaLibro = portada;
+
     }
 
     public Libros() {
@@ -89,5 +92,17 @@ public class Libros implements Serializable {
 
     public void setPaginas(int paginas) {
         this.paginas = paginas;
+    }
+
+    public int getPortadaLibro() {
+        return portadaLibro;
+    }
+
+    public void setPortadaLibro(int portadaLibro) {
+        this.portadaLibro = portadaLibro;
+    }
+
+    public Libros(int portadaLibro) {this.portadaLibro = portadaLibro;
+
     }
 }

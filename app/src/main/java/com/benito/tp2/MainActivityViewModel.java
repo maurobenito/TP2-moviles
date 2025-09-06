@@ -13,12 +13,20 @@ import com.benito.tp2.Libros.Libros;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivityViewModel extends AndroidViewModel {
     private List<Libros> listaLibros = Arrays.asList(
-            new Libros("Despierta", "1234", "Anthony De Melo", "Mundo", "Es un super libro", "Autoayuda", 2010, 100),
-            new Libros("El dia que Nietsche lloró", "5678", "Louis Vilton", "Campana", "alta historia", "Drama", 2005, 302),
-            new Libros("Un Mundo Feliz", "9123", "Aldous Houxley", "Banana", "Una critica al mundo moderno", "Ciencia ficción", 2013, 235));
+            new Libros("Siddharta", "1111", "Hermann Hesse", "Planeta", "Un viaje espiritual", "Filosofía", 1922, 250,  R.drawable.siddharta),
+            new Libros("Rayuela", "2222", "Julio Cortázar", "Sudamericana", "Una obra maestra de la literatura", "Ficción", 1963, 400,  R.drawable.rayuela),
+            new Libros("Colapso", "3333", "Jared Diamond", "Debate", "Un análisis sobre sociedades que desaparecieron", "Historia", 2005, 450, R.drawable.colapso),
+            new Libros("It", "4444", "Stephen King", "Viking", "Terror clásico con un payaso siniestro", "Terror", 1986, 1138, R.drawable.it),
+            new Libros("Crimen", "5555", "Fiódor Dostoievski", "Alianza", "Inspirado en Crimen y Castigo", "Novela", 1866, 500, R.drawable.descarga),
+            new Libros("Fahrenheit", "6666", "Ray Bradbury", "Ballantine", "Un mundo donde los libros están prohibidos", "Ciencia Ficción", 1953, 249,R.drawable.descarga),
+            new Libros("Ensayo", "7777", "José Saramago", "Alfaguara", "Un estilo narrativo único", "Novela", 1995, 350,R.drawable.descarga),
+            new Libros("Metamorfosis", "8888", "Franz Kafka", "Kurt Wolff", "Un hombre despierta convertido en insecto", "Clásico", 1915, 325,R.drawable.descarga),
+            new Libros("Solaris", "9999", "Stanisław Lem", "Minotauro", "Contacto humano con una inteligencia alienígena", "Ciencia Ficción", 1961, 300,R.drawable.descarga),
+            new Libros("Inferno", "1010", "Dan Brown", "Doubleday", "Una aventura con Robert Langdon", "Thriller", 2013, 480,R.drawable.descarga));
     private MutableLiveData<Libros> mutablelibro = new MutableLiveData<>();
     private MutableLiveData<String> mutableError = new MutableLiveData<>();
 
@@ -36,7 +44,7 @@ public class MainActivityViewModel extends AndroidViewModel {
         Libros libroEncontrado = null;
         for (Libros libro : listaLibros
         ) {
-            if (libro.getTitulo().equalsIgnoreCase(titulo)) {
+            if (libro.getTitulo().toLowerCase().contains(titulo.toLowerCase())){
                 libroEncontrado = libro;
                 break;
             }

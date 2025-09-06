@@ -27,9 +27,18 @@ public class EncontradoActivity extends AppCompatActivity {
             public void onChanged(Libros libros) {
                 if (libros != null) {
                     encontradoBinding.tvLibro.setText(libros.getTitulo());
+                    encontradoBinding.tvAutor.setText(libros.getAutor());
+                    encontradoBinding.tvAnio.setText(String.valueOf(libros.getAnio()));
+                    encontradoBinding.tvDesc.setText(libros.getDescripcion());
+                    encontradoBinding.ivPortada.setImageResource(libros.getPortadaLibro());
+
+
+
+
+
 
                 } else {
-                    encontradoBinding.tvLibro.setText("No se encontró libro");
+                    encontradoBinding.tvLibro.setText("No se encontró el libro");
                 }
             }
         });;
