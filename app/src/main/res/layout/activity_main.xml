@@ -8,7 +8,7 @@
     android:background="#B3E5FC"
     tools:context="com.benito.tp2.MainActivity">
 
-    <!-- EditText para ingresar título -->
+   
     <EditText
         android:id="@+id/etTitulo"
         android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
-    <!-- Botón Buscar más llamativo -->
+   
     <Button
         android:id="@+id/btBuscar"
         android:layout_width="200dp"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
-    <!-- Título grande centrado, TextView para quitar subrayado -->
+   
     <TextView
         android:id="@+id/ptTitulo"
         android:layout_width="wrap_content"
